@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Milica1234567/calendar.git/static/css/main.be2f215c.css",
+    "main.js": "/Milica1234567/calendar.git/static/js/main.24d51d24.js",
+    "static/media/logo.png": "/Milica1234567/calendar.git/static/media/logo.ca752f347a094c44d9a1.png",
+    "static/media/user.png": "/Milica1234567/calendar.git/static/media/user.f0d1bbf45570d5f23c12.png",
+    "static/media/defaultAvatar.png": "/Milica1234567/calendar.git/static/media/defaultAvatar.1bd3dd5b0c6badc4b0dd.png",
+    "static/media/book.png": "/Milica1234567/calendar.git/static/media/book.a94ee23d06ba960df83a.png",
+    "static/media/home (1).png": "/Milica1234567/calendar.git/static/media/home (1).34510ce355822e6f4f5b.png",
+    "index.html": "/Milica1234567/calendar.git/index.html",
+    "main.be2f215c.css.map": "/Milica1234567/calendar.git/static/css/main.be2f215c.css.map",
+    "main.24d51d24.js.map": "/Milica1234567/calendar.git/static/js/main.24d51d24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be2f215c.css",
+    "static/js/main.24d51d24.js"
+  ]
+}
