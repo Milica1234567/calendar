@@ -1,38 +1,434 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+/*general*/
+body {
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-button {
+  border: 1px solid #c4c4c4;
+  background-color: #c4c4c44d;
+  padding: 8px 14px;
+  border-radius: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/*register/login*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.card-holder-blur {
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid;
+  backdrop-filter: blur(6px);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  align-items: center;
+  width: 250px;
+}
+
+.register-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.register-container form input {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid;
+  margin: 10px;
+  height: 30px;
+  padding-left: 8px;
+  background-color: transparent;
+}
+
+.register-container form input:focus {
+  outline: none;
+  border-bottom: 2px solid;
+  background-color: transparent;
+}
+
+.register-container form button {
+  width: 80%;
+  height: 30px;
+  margin: 10px;
+  color: #000000;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.waves {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: -5px;
+}
+
+.waves use {
+  animation: move-forever 4s linear infinite;
+}
+
+.waves use:nth-child(1) {
+  animation-duration: 7s;
+}
+
+.waves use:nth-child(2) {
+  animation-duration: 8.5s;
+  animation-delay: -5.5s;
+}
+
+.waves use:nth-child(3) {
+  animation-duration: 6s;
+}
+.waves {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.waves svg {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate(-2px, 0);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translate(0px, 0);
   }
+}
+
+/*navbar*/
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo h1 {
+  font-family: "League Spartan", sans-serif;
+  margin-left: 10px;
+  font-size: 32px;
+}
+
+.logo a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: #000000;
+}
+
+.logoavatar-container {
+  width: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.logoavatar-container img {
+  width: 100%;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 20px 0;
+  width: 80%;
+  justify-self: center;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+  padding: 10px 20px 10px 20px;
+}
+
+.navbar a {
+  color: #4d4c4c;
+  text-decoration: none;
+  font-size: 16px;
+}
+.profileavatar-container {
+  width: 36px;
+}
+
+.profileavatar-container img {
+  width: 100%;
+}
+
+.dropdownProfileDropdown {
+  position: absolute;
+  top: 85px;
+  margin-right: 35px;
+  right: 0;
+  width: 150px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  animation: dropdownFade 0.2s ease;
+  z-index: 10;
+}
+
+.dropdownProfileDropdown p {
+  padding: 12px 18px;
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s;
+  border-bottom: 1px solid #c4c4c4;
+  border-radius: 12px;
+}
+
+.dropdownProfileDropdown p:hover {
+  font-size: 18px;
+}
+
+.dropdownProfileDropdown p:last-child {
+  border-bottom: none;
+}
+
+.calendar-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-calendar {
+  cursor: pointer;
+  margin: 0;
+  color: #4d4c4c;
+}
+
+.dropdown-calendar {
+  position: absolute;
+  top: 220%;
+  right: -100px;
+  width: 150px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  animation: dropdownFade 0.2s ease;
+  z-index: 10;
+}
+
+.dropdown-calendar p {
+  padding: 12px 18px;
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s;
+  border-bottom: 1px solid #c4c4c4;
+  border-radius: 12px;
+}
+
+.dropdown-calendar p:last-child {
+  border-bottom: none;
+}
+
+.dropdown-calendar p:hover {
+  font-size: 18px;
+}
+
+/*settings*/
+
+.settings-container {
+  width: 80%;
+  justify-self: center;
+  margin-top: 40px;
+}
+
+.color-pallete-settings {
+  padding: 10px;
+}
+
+.color-palette-selector select {
+  width: 30%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.color-palette-selector select:focus {
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.pallete-preview {
+  display: flex;
+  flex-direction: row;
+  margin: 16px 0;
+}
+
+.individual-color {
+  margin-right: 12px;
+  height: 20px;
+  width: 30px;
+}
+
+option {
+  font-family: "League Spartan", sans-serif;
+}
+
+.category-settings {
+  font-family: "League Spartan", sans-serif;
+  padding: 10px;
+  border-top: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+h3 {
+  font-weight: 400;
+  font-family: "League Spartan", sans-serif;
+}
+.category-input {
+  width: 30%;
+}
+.category-settings input {
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  padding: 8px;
+  width: 100%;
+  color: #000000;
+  font-size: 15px;
+  font-family: "League Spartan", sans-serif;
+}
+.category-settings input::placeholder {
+  font-family: "League Spartan", sans-serif;
+}
+.category-input input:focus {
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+/*monthly calendar*/
+.monthly-calendar {
+  width: 80%;
+  justify-self: center;
+}
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 30%;
+  justify-self: center;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.react-calendar__navigation button:disabled {
+  opacity: 0.3;
+}
+
+.react-calendar__navigation__label {
+  font-size: 22px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+}
+
+.react-calendar__tile {
+  background: none;
+  border-radius: 8px;
+  padding: 8px 4px;
+  height: 100px;
+  transition: 0.2s;
+  position: relative;
+  border: 1px solid #4d4c4c;
+}
+
+.react-calendar__tile:hover {
+  background: #f0f0f0;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  align-items: center;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.react-calendar__month-view__days__day > abbr {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  margin: 0 !important;
+  font-size: 11px;
+  font-family: "League Spartan", sans-serif;
+}
+.react-calendar__tile--now {
+  background: #c4c4c4 !important;
+  border: 1px solid #c4c4c4 !important;
+  border-radius: 8px;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #999;
+}
+
+.react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 4px !important;
+}
+
+/*insert task modal*/
+.modal-overlay-insert-task {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content-insert-task {
+  background: white;
+  padding: 20px;
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+/*task show*/
+
+.task-show {
+  padding: 0;
+  margin: 0;
+
 }
