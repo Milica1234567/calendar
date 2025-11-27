@@ -51,13 +51,16 @@ const InsertTaskModal = ({ date, onClose, onSave, editingTask, onUpdate, onDelet
         className="modal-content-insert-task"
         onClick={(e) => e.stopPropagation()}
       >
+        <button className="close-btn" onClick={onClose}>
+            Zatvori
+          </button>
         <h3>
-          {editingTask ? "Izmeni task" : "Novi task"} — {date.toDateString()}
+          {editingTask ? "Update event" : "Add event"} — {date.toDateString()}
         </h3>
 
         <input
           type="text"
-          placeholder="Naslov taska"
+          placeholder="Event"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -69,7 +72,7 @@ const InsertTaskModal = ({ date, onClose, onSave, editingTask, onUpdate, onDelet
         />
 
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="">Kategorija</option>
+          <option value="">Category</option>
 
           {categories.map((cat, i) => (
             <option key={i} value={cat.title}>
@@ -80,24 +83,22 @@ const InsertTaskModal = ({ date, onClose, onSave, editingTask, onUpdate, onDelet
 
         <div className="modal-actions">
           {!editingTask && (
-            <button onClick={handleSave}>Sačuvaj</button>
+            <button onClick={handleSave}>Save</button>
           )}
 
           {editingTask && (
             <>
-              <button onClick={handleUpdate}>Izmeni</button>
+              <button onClick={handleUpdate}>Update</button>
               <button
                 style={{ background: "red", color: "white" }}
                 onClick={() => onDelete(editingTask.dateKey, editingTask.index)}
               >
-                Obriši
+                Delete
               </button>
             </>
           )}
 
-          <button className="close-btn" onClick={onClose}>
-            Zatvori
-          </button>
+          
         </div>
       </div>
     </div>

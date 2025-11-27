@@ -2,6 +2,7 @@
 
 /*general*/
 body {
+  font-family: "League Spartan", sans-serif;
 }
 
 .main-button {
@@ -423,6 +424,16 @@ h3 {
   width: 350px;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content-insert-task input {
+  margin: 6px;
+}
+
+.modal-content-insert-task select{
+  margin: 6px;
 }
 
 /*task show*/
@@ -430,5 +441,43 @@ h3 {
 .task-show {
   padding: 0;
   margin: 0;
+}
 
+/*dashboard*/
+
+.dashboard-container {
+  width: 80%;
+  justify-self: center;
+}
+
+/*upcoming task*/
+
+.upcoming-task {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  width: 40%;
+}
+
+.avatar-holder {
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-right: 12px;
+}
+
+.upcoming-task > div img {
+  width: 100%;
+}
+
+.upcoming-tasks h3 {
+  font-weight: 00;
+}
+
+.task-title {
+  margin: 0 0 4px 0;
 }

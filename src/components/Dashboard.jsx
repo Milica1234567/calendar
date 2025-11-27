@@ -12,7 +12,7 @@ const Dashboard = () => {
     }
   }, []);
   return (
-    <div>
+    <div className='dashboard-container'>
       <UpcomingTasks tasks={tasks} />
     </div>
   )

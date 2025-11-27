@@ -6,9 +6,7 @@ const UpcomingTasks = ({ tasks }) => {
   nextWeek.setDate(today.getDate() + 7);
 
   const allTasks = Object.keys(tasks)
-    .map((dateKey) =>
-      tasks[dateKey].map((task) => ({ ...task, dateKey }))
-    )
+    .map((dateKey) => tasks[dateKey].map((task) => ({ ...task, dateKey })))
     .flat();
 
   const upcomingTasks = allTasks.filter((task) => {
@@ -16,9 +14,7 @@ const UpcomingTasks = ({ tasks }) => {
     return taskDate >= today && taskDate <= nextWeek;
   });
 
-  upcomingTasks.sort(
-    (a, b) => new Date(a.dateKey) - new Date(b.dateKey)
-  );
+  upcomingTasks.sort((a, b) => new Date(a.dateKey) - new Date(b.dateKey));
 
   if (upcomingTasks.length === 0) return <p>No events in next 7 days</p>;
 
@@ -28,29 +24,26 @@ const UpcomingTasks = ({ tasks }) => {
       <ul style={{ listStyle: "none", padding: 0 }}>
         {upcomingTasks.map((task, i) => (
           <li
+            className="upcoming-task"
             key={i}
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "6px",
-              marginBottom: "4px",
-              padding: "6px",
-              borderRadius: "4px",
               backgroundColor: task.category
                 ? task.category.color + "22"
-                : "#eee",
+                : "#f0f0f0",
             }}
           >
             {task.category?.avatar && (
-              <img
+              <div className="avatar-holder">
+                <img
                 src={task.category.avatar}
                 alt={task.category.title}
-                style={{ width: 20, height: 20, borderRadius: "50%" }}
+                
               />
+              </div>
             )}
             <div>
-              <strong>{task.title}</strong>{" "}
-              {task.category && `(${task.category.title})`}
+              <p className="task-title"><span style={{fontWeight:600}}>{task.title}</span> {task.category && `${task.category.title}`}</p>
+              
               <div>
                 {new Date(task.dateKey).toDateString()}{" "}
                 {task.time && `at ${task.time}`}
